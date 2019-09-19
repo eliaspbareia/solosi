@@ -28,7 +28,7 @@ class Sistema:
         #list = formList(self.top, modelProp)
 
             self.top = Toplevel(self.root)
-            self.top.geometry("550x600")
+            self.top.geometry("550x650")
             self.center(self.top)
             self.top.transient(self.root)
             self.top.focus_force()
@@ -58,5 +58,3 @@ class Sistema:
         self.center(self.root)
         self.root.attributes('-alpha',1.0)
         self.root.mainloop()
-
-

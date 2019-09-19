@@ -99,7 +99,7 @@ class List():
         self.container2 = Frame(self.form)
         self.container2['pady'] = 10
         self.container2.grid(row=1, column=0)
-        self.lblNomePropriedade = Label(self.container2, text="Propriedade:", font=self.fontPadrao, width=10)
+        self.lblNomePropriedade = ttk.Label(self.container2, style="BW.TLabel", text="Propriedade:", font=self.fontPadrao, width=10)
         self.lblNomePropriedade.pack(side=LEFT)
         #vcmd = self.container2.register(self.validate_text) #registra a validação do texto
         #self.txtNomePropriedade = Entry(self.container2, validate='key', validatecommand=(vcmd, '%P'))
@@ -107,53 +107,56 @@ class List():
         self.txtNomePropriedade.focus_set()
         self.txtNomePropriedade['width'] = 65
         self.txtNomePropriedade['font'] =self.fontEntry
-        self.txtNomePropriedade.pack(side=LEFT)
+        self.txtNomePropriedade.pack(side=LEFT, padx=(10,5))
 
         """Informa o nome do proprietario"""
         self.container3 = Frame(self.form)
         self.container3['pady'] = 10
         self.container3.grid(row=2, column=0)
-        self.lblNomePropritario = Label(self.container3, text="Proprietário:", font=self.fontPadrao, width=10)
+        self.lblNomePropritario = ttk.Label(self.container3, style="BW.TLabel", text="Proprietário:", font=self.fontPadrao, width=10)
         self.lblNomePropritario.pack(side=LEFT)
-        self.txtNomeProprietario = Entry(self.container3)
-        self.txtNomeProprietario['width'] = 30
+        self.txtNomeProprietario = ttk.Entry(self.container3, style="BW.TEntry")
+        self.txtNomeProprietario['width'] = 65
         self.txtNomeProprietario['font'] = self.fontEntry
-        self.txtNomeProprietario.pack(side=LEFT)
+        self.txtNomeProprietario.pack(side=LEFT, padx=(10,5))
 
         """Informa o cpf do proprietário"""
-        self.lblCPF = Label(self.container3, text="CPF:", font=self.fontPadrao, width=10)
+        self.container3_1 = Frame(self.form)
+        self.container3_1['pady'] = 10
+        self.container3_1.grid(row=3, column=0)
+        self.lblCPF = ttk.Label(self.container3_1, style="BW.TLabel", text="CPF:", font=self.fontPadrao, width=10)
         self.lblCPF.pack(side=LEFT)
-        self.txtCpfProprietario = Entry(self.container3)
-        self.txtCpfProprietario['width'] = 20
+        self.txtCpfProprietario = ttk.Entry(self.container3_1, style="BW.TEntry")
+        self.txtCpfProprietario['width'] = 65
         self.txtCpfProprietario['font'] = self.fontEntry
-        self.txtCpfProprietario.pack(side=LEFT)
+        self.txtCpfProprietario.pack(side=LEFT, padx=(10,5))
 
         """Informa o Localidade do proprietário"""
         self.container4 = Frame(self.form)
         self.container4['pady'] = 10
-        self.container4.grid(row=3, column=0, columnspan=4)
-        self.lblLocalidade= Label(self.container4, text="Endereço:", font=self.fontPadrao, width=10)
+        self.container4.grid(row=4, column=0, columnspan=4)
+        self.lblLocalidade= ttk.Label(self.container4, style="BW.TLabel", text="Endereço:", font=self.fontPadrao, width=10)
         self.lblLocalidade.pack(side=LEFT)
-        self.txtLocalidade = Entry(self.container4)
+        self.txtLocalidade = ttk.Entry(self.container4, style="BW.TEntry")
         self.txtLocalidade['width'] = 65
         self.txtLocalidade['font'] = self.fontEntry
-        self.txtLocalidade.pack(side=LEFT)
+        self.txtLocalidade.pack(side=LEFT, padx=(10,5))
 
         """Informa o Localidade do proprietário"""
         self.container5 = Frame(self.form)
         self.container5['pady'] = 10
-        self.container5.grid(row=4, column=0)
-        self.lblCidade = Label(self.container5, text="Cidade:", font=self.fontPadrao, width=10)
+        self.container5.grid(row=5, column=0)
+        self.lblCidade = ttk.Label(self.container5, style="BW.TLabel", text="Cidade:", font=self.fontPadrao, width=10)
         self.lblCidade.pack(side=LEFT)
-        self.txtCidade = Entry(self.container5)
+        self.txtCidade = ttk.Entry(self.container5, style="BW.TEntry")
         self.txtCidade['width'] = 65
         self.txtCidade['font'] = self.fontEntry
-        self.txtCidade.pack(side=LEFT)
+        self.txtCidade.pack(side=LEFT, padx=(10,5))
 
         """Botões para as ações"""
         self.container6 = Frame(self.form)
         self.container6['pady'] = 10
-        self.container6.grid(row=5, column=0)
+        self.container6.grid(row=6, column=0)
 
         self.btnNew = ttk.Button(self.container6, style="BW.TButton", compound=LEFT)
         self.btnNew['text'] = 'New'
