@@ -36,6 +36,8 @@ class List():
         self.frame.pack(side="top")
 
         self.form = Frame(self.toplevel)
+        self.form['padx'] = 10
+        self.form['pady'] = 10
         self.form.pack(side="top")
 
         root.grid_rowconfigure(0, weight=1)
@@ -91,13 +93,6 @@ class List():
 
 
     def CreateForm(self):
-        """Label para mensagens de erro ou sucesso"""
-        self.container1 = Frame(self.form)
-        self.container1['pady'] = 10
-        self.container1.grid(row=0, column=0, columnspan=3)
-        self.titulo1 = ttk.Label(self.container1, text="Formulário")
-        self.titulo1["font"] = ("Verdana","9", "italic")
-        self.titulo1.pack(fill=X)
 
         """Caixas de texto"""
         """Informa o nome da propriedade"""
@@ -108,7 +103,7 @@ class List():
         self.lblNomePropriedade.pack(side=LEFT)
         #vcmd = self.container2.register(self.validate_text) #registra a validação do texto
         #self.txtNomePropriedade = Entry(self.container2, validate='key', validatecommand=(vcmd, '%P'))
-        self.txtNomePropriedade = Entry(self.container2)
+        self.txtNomePropriedade = ttk.Entry(self.container2, style="BW.TEntry")
         self.txtNomePropriedade.focus_set()
         self.txtNomePropriedade['width'] = 65
         self.txtNomePropriedade['font'] =self.fontEntry
